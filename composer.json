@@ -1,6 +1,8 @@
 {
   "name": "freshp/php-enumeration",
-  "type": "package",
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://github.com/freshp/php-enumeration",
   "autoload": {
     "psr-4": {
       "FreshP\\PhpEnumeration\\": "src/"

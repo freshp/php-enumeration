@@ -12,7 +12,7 @@ small package to represent a database or api enumeration field
 1. Basic install via composer
 
     ```
-    "freshp/php-enumeration"": "0.0.1"
+    "freshp/php-enumeration"": "0.0.2"
     ```
 2. take a look in the fixtures to see an example
 
