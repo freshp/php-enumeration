@@ -1,0 +1,50 @@
+{
+  "name": "freshp/php-enumeration",
+  "type": "package",
+  "autoload": {
+    "psr-4": {
+      "FreshP\\PhpEnumeration\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "FreshP\\PhpEnumeration\\": "src/",
+      "FreshP\\PhpEnumeration\\Tests\\": "Tests/"
+    }
+  },
+  "require-dev": {
+    "tm/tooly-composer-script": "1.2.1",
+    "mi-schi/php-code-checker": "2.2.10"
+  },
+  "scripts": {
+    "post-install-cmd": "Tooly\\ScriptHandler::installPharTools",
+    "post-update-cmd": "Tooly\\ScriptHandler::installPharTools"
+  },
+  "extra": {
+    "tools": {
+      "phpunit": {
+        "url": "https://phar.phpunit.de/phpunit.phar",
+        "force-replace": true
+      },
+      "phpcpd": {
+        "url": "https://phar.phpunit.de/phpcpd.phar",
+        "force-replace": true
+      },
+      "php_codesniffer": {
+        "url": "https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar",
+        "force-replace": true
+      },
+      "phpmetrics": {
+        "url": "https://github.com/phpmetrics/PhpMetrics/raw/master/build/phpmetrics.phar",
+        "force-replace": true
+      },
+      "phpmd-extension": {
+        "url": "https://github.com/mi-schi/phpmd-extension/releases/download/stable/phpmd-extension.phar",
+        "force-replace": true
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+language: php
+
+php:
+  - 7.0
+
+sudo: false
+
+before_script:
+  - composer self-update
+  - composer install --prefer-source --no-interaction
+
+script:
+  - ./vendor/bin/phpunit.phar -c ./phpunit.xml --debug --verbose
+  - ./vendor/bin/phpmd-extension.phar ./src/ text phpmd.xml
