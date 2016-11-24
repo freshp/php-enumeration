@@ -20,13 +20,11 @@ small package to represent a database or api enumeration field
 Run each command in the project root directory.
 
 ### Execute PHPUnit tests
-
 ```
 ./vendor/bin/phpunit.phar -c ./phpunit.xml --debug --verbose
 ```
 
 ### Execute PHPMD checks
-
 ```
 ./vendor/bin/phpmd-extension.phar ./src/ text phpmd.xml 
 ```
