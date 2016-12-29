@@ -28,3 +28,9 @@ Run each command in the project root directory.
 ```
 ./vendor/bin/phpmd-extension.phar ./src/ text phpmd.xml 
 ```
+
+### Execute PHPSTAN checks
+
+```
+./vendor/bin/phpstan analyse -l 4 src/
+```

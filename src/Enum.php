@@ -10,7 +10,7 @@ abstract class Enum
     /**
      * @var string
      */
-    private $value;
+    protected $value;
 
     /**
      * @param string $value
@@ -23,7 +23,7 @@ abstract class Enum
     /**
      * @return string
      */
-    public function __toString() : string
+    public function __toString(): string
     {
         return $this->value;
     }
@@ -31,14 +31,14 @@ abstract class Enum
     /**
      * @return string
      */
-    abstract protected function getDefault() : string;
+    abstract protected function getDefault(): string;
 
     /**
      * @param string $value
      *
      * @return void
      */
-    private function setValue(string $value)
+    protected function setValue(string $value)
     {
         if (in_array($value, $this->toArray(), true)) {
             $this->value = $value;
@@ -52,7 +52,7 @@ abstract class Enum
     /**
      * @return array
      */
-    private function toArray() : array
+    protected function toArray(): array
     {
         $reflection = new \ReflectionClass($this);
 

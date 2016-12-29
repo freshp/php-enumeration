@@ -15,7 +15,7 @@ class EnumFixture extends Enum
     /**
      * @return string
      */
-    protected function getDefault() : string
+    protected function getDefault(): string
     {
         return self::TEST_DEFAULT;
     }
