@@ -9,17 +9,16 @@
     }
   },
   "require": {
-    "php": ">=7.0",
-    "phpstan/phpstan": "0.4.1"
+    "php": ">=7.0"
   },
   "autoload-dev": {
     "psr-4": {
-      "FreshP\\PhpEnumeration\\": "src/",
       "FreshP\\PhpEnumeration\\Tests\\": "Tests/"
     }
   },
   "require-dev": {
-    "tm/tooly-composer-script": "1.2.1"
+    "tm/tooly-composer-script": "1.2.1",
+    "phpstan/phpstan": "0.4.1"
   },
   "scripts": {
     "post-install-cmd": "Tooly\\ScriptHandler::installPharTools",
