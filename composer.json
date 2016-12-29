@@ -18,8 +18,7 @@
     }
   },
   "require-dev": {
-    "tm/tooly-composer-script": "1.2.1",
-    "mi-schi/php-code-checker": "2.2.10"
+    "tm/tooly-composer-script": "1.2.1"
   },
   "scripts": {
     "post-install-cmd": "Tooly\\ScriptHandler::installPharTools",
@@ -29,18 +28,6 @@
     "tools": {
       "phpunit": {
         "url": "https://phar.phpunit.de/phpunit.phar",
-        "force-replace": true
-      },
-      "phpcpd": {
-        "url": "https://phar.phpunit.de/phpcpd.phar",
-        "force-replace": true
-      },
-      "php_codesniffer": {
-        "url": "https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar",
-        "force-replace": true
-      },
-      "phpmetrics": {
-        "url": "https://github.com/phpmetrics/PhpMetrics/raw/master/build/phpmetrics.phar",
         "force-replace": true
       },
       "phpmd-extension": {
