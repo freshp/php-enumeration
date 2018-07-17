@@ -54,7 +54,4 @@
         </properties>
     </rule>
     <rule ref="rulesets/unusedcode.xml"/>
-
-    <rule ref="../../../../../../rulesets/naming.xml"/>
-    <rule ref="../../../../../../rulesets/test.xml"/>
 </ruleset>

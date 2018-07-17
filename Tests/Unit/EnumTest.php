@@ -2,12 +2,11 @@
 
 namespace FreshP\PhpEnumeration\Tests\Unit;
 
+use FreshP\PhpEnumeration\Tests\Fixtures\EmptyEnumFixture;
 use FreshP\PhpEnumeration\Tests\Fixtures\EnumFixture;
+use PHPUnit\Framework\TestCase;
 
-/**
- * @package FreshP\PhpEnumeration\Tests\Unit
- */
-class EnumTest extends \PHPUnit_Framework_TestCase
+class EnumTest extends TestCase
 {
     public function testDefaultEnumHandling()
     {
@@ -35,5 +34,23 @@ class EnumTest extends \PHPUnit_Framework_TestCase
         $enum = new EnumFixture(EnumFixture::TEST_CONSTANT);
 
         $this->assertEquals(EnumFixture::TEST_CONSTANT, $enum);
+    }
+
+    public function testList()
+    {
+        $enum = new EnumFixture(EnumFixture::TEST_CONSTANT);
+
+        $this->assertEquals([
+            'TEST_CONSTANT' => 'constant',
+            'TEST_DEFAULT' => 'default',
+        ], $enum->listEnumerationOptions());
+    }
+
+    public function testReflectionException()
+    {
+        $enum = new EmptyEnumFixture();
+
+        $this->assertEmpty($enum->__toString());
+        $this->assertNotEmpty($enum->listEnumerationOptions());
     }
 }
