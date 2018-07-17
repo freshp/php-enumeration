@@ -12,4 +12,9 @@ class EmptyEnumFixture extends Enum
     {
         return '';
     }
+
+    public function listAllOptions(): array
+    {
+        return $this->toArray();
+    }
 }

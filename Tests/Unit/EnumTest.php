@@ -36,21 +36,11 @@ class EnumTest extends TestCase
         $this->assertEquals(EnumFixture::TEST_CONSTANT, $enum);
     }
 
-    public function testList()
-    {
-        $enum = new EnumFixture(EnumFixture::TEST_CONSTANT);
-
-        $this->assertEquals([
-            'TEST_CONSTANT' => 'constant',
-            'TEST_DEFAULT' => 'default',
-        ], $enum->listEnumerationOptions());
-    }
-
     public function testReflectionException()
     {
         $enum = new EmptyEnumFixture();
 
         $this->assertEmpty($enum->__toString());
-        $this->assertNotEmpty($enum->listEnumerationOptions());
+        $this->assertNotEmpty($enum->listAllOptions());
     }
 }
