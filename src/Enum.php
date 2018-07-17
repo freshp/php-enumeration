@@ -16,23 +16,24 @@ abstract class Enum
         return $this->value;
     }
 
-    public function listEnumerationOptions(): array
-    {
-        $reflection = new \ReflectionClass($this);
-
-        return $reflection->getConstants();
-    }
 
     abstract protected function getDefault(): string;
 
     protected function setValue(string $value): void
     {
-        if (true === in_array($value, $this->listEnumerationOptions(), true)) {
+        if (true === in_array($value, $this->toArray(), true)) {
             $this->value = $value;
 
             return;
         }
 
         $this->value = $this->getDefault();
+    }
+
+    protected function toArray(): array
+    {
+        $reflection = new \ReflectionClass($this);
+
+        return $reflection->getConstants();
     }
 }
