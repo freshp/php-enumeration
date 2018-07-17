@@ -4,13 +4,12 @@ namespace FreshP\PhpEnumeration\Tests\Fixtures;
 
 use FreshP\PhpEnumeration\Enum;
 
-class EnumFixture extends Enum
+class EmptyEnumFixture extends Enum
 {
-    const TEST_CONSTANT = 'constant';
-    const TEST_DEFAULT = 'default';
+    private const ENUM_OPTION = 'secure';
 
     protected function getDefault(): string
     {
-        return self::TEST_DEFAULT;
+        return '';
     }
 }

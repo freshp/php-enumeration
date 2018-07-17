@@ -1,39 +1,51 @@
 {
-  "name": "freshp/php-enumeration",
-  "type": "library",
-  "license": "MIT",
-  "homepage": "https://github.com/freshp/php-enumeration",
-  "autoload": {
-    "psr-4": {
-      "FreshP\\PhpEnumeration\\": "src/"
+    "name": "freshp/php-enumeration",
+    "type": "library",
+    "description": "This small package can represent a enumeration field. For example in a database or an api.",
+    "license": "MIT",
+    "homepage": "https://github.com/freshp/php-enumeration",
+    "autoload": {
+        "psr-4": {
+            "FreshP\\PhpEnumeration\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.2"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FreshP\\PhpEnumeration\\Tests\\": "Tests/"
+        }
+    },
+    "require-dev": {
+        "tm/tooly-composer-script": "~1.2.6"
+    },
+    "scripts": {
+        "post-install-cmd": "Tooly\\ScriptHandler::installPharTools",
+        "post-update-cmd": "Tooly\\ScriptHandler::installPharTools"
+    },
+    "extra": {
+        "tools": {
+            "phpunit": {
+                "url": "https://phar.phpunit.de/phpunit-7.1.2.phar",
+                "force-replace": true
+            },
+            "phpmd": {
+                "url": "http://static.phpmd.org/php/2.6.0/phpmd.phar",
+                "force-replace": true
+            },
+            "phpcpd": {
+                "url": "https://github.com/sebastianbergmann/phpcpd/releases/download/2.0.0/phpcpd.phar",
+                "force-replace": true
+            },
+            "phpcs": {
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.2.3/phpcs.phar",
+                "force-replace": true
+            },
+            "phpstan": {
+                "url": "https://github.com/phpstan/phpstan/releases/download/0.9.2/phpstan.phar",
+                "force-replace": true
+            }
+        }
     }
-  },
-  "require": {
-    "php": ">=7.0"
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "FreshP\\PhpEnumeration\\Tests\\": "Tests/"
-    }
-  },
-  "require-dev": {
-    "tm/tooly-composer-script": "1.2.1",
-    "phpstan/phpstan": "0.4.1"
-  },
-  "scripts": {
-    "post-install-cmd": "Tooly\\ScriptHandler::installPharTools",
-    "post-update-cmd": "Tooly\\ScriptHandler::installPharTools"
-  },
-  "extra": {
-    "tools": {
-      "phpunit": {
-        "url": "https://phar.phpunit.de/phpunit.phar",
-        "force-replace": true
-      },
-      "phpmd-extension": {
-        "url": "https://github.com/mi-schi/phpmd-extension/releases/download/stable/phpmd-extension.phar",
-        "force-replace": true
-      }
-    }
-  }
 }
