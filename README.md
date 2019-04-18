@@ -21,7 +21,7 @@ Run each command in the project root directory.
 
 ### Execute PHPUnit tests
 ```
-./vendor/bin/phpunit.phar -c ./phpunit.xml --debug --verbose
+./vendor/bin/phpunit.phar -c ./phpunit.xml --testdox
 ```
 
 ### Execute PHPMD checks
@@ -32,5 +32,5 @@ Run each command in the project root directory.
 ### Execute PHPSTAN checks
 
 ```
-./vendor/bin/phpstan analyse -l 4 src/
+./vendor/bin/phpstan.phar analyse -l max ./src/
 ```
