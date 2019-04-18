@@ -2,6 +2,8 @@
 
 namespace FreshP\PhpEnumeration;
 
+use ReflectionClass;
+
 abstract class Enum
 {
     protected $value;
@@ -15,7 +17,6 @@ abstract class Enum
     {
         return $this->value;
     }
-
 
     abstract protected function getDefault(): string;
 
@@ -32,8 +33,6 @@ abstract class Enum
 
     protected function toArray(): array
     {
-        $reflection = new \ReflectionClass($this);
-
-        return $reflection->getConstants();
+        return (new ReflectionClass(static::class))->getConstants();
     }
 }
