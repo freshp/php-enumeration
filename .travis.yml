@@ -1,7 +1,7 @@
 language: php
 
 php:
-  - 7.2
+  - 7.3
 
 sudo: false
 
@@ -11,7 +11,5 @@ before_script:
 
 script:
   - ./vendor/bin/phpunit.phar -c ./phpunit.xml --testdox
-  - ./vendor/bin/phpmd.phar ./src/ text phpmd.xml
   - ./vendor/bin/phpstan.phar analyse -l max ./src
   - ./vendor/bin/phpcs.phar ./src --standard=PSR2
-  - ./vendor/bin/phpcpd.phar ./src

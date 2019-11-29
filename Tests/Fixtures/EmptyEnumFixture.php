@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FreshP\PhpEnumeration\Tests\Fixtures;
 
 use FreshP\PhpEnumeration\Enum;
