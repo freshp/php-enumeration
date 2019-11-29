@@ -5,7 +5,7 @@
 
 # php-enumeration
 
-small package to represent a database or api enumeration field
+This small package can represent a enumeration field. For example in a database or an api.
 
 ## Install and usage
 
@@ -24,13 +24,17 @@ Run each command in the project root directory.
 ./vendor/bin/phpunit.phar -c ./phpunit.xml --testdox
 ```
 
-### Execute PHPMD checks
+### Execute PHPCS-Fixer checks
 ```
-./vendor/bin/phpmd-extension.phar ./src/ text phpmd.xml 
+./vendor/bin/phpcs-fixer.phar fix ./src 
+```
+
+### Execute PHPCS checks
+```
+./vendor/bin/phpcs.phar ./src --standard=PSR2 
 ```
 
 ### Execute PHPSTAN checks
-
 ```
-./vendor/bin/phpstan.phar analyse -l max ./src/
+./vendor/bin/phpstan.phar analyse -l max ./src
 ```
