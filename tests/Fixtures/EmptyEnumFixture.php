@@ -6,9 +6,6 @@ namespace FreshP\PhpEnumeration\Tests\Fixtures;
 
 use FreshP\PhpEnumeration\Enum;
 
-/**
- * @method static EmptyEnumFixture ENUM_OPTION()
- */
 class EmptyEnumFixture extends Enum
 {
     private const ENUM_OPTION = 'secure';

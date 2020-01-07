@@ -6,7 +6,9 @@ namespace FreshP\PhpEnumeration\Tests\Unit;
 
 use FreshP\PhpEnumeration\Tests\Fixtures\EmptyEnumFixture;
 use FreshP\PhpEnumeration\Tests\Fixtures\EnumFixture;
+use FreshP\PhpEnumeration\Tests\Fixtures\ExceptionEnumFixture;
 use PHPUnit\Framework\TestCase;
+use RuntimeException;
 use stdClass;
 use TypeError;
 
@@ -60,5 +62,13 @@ class EnumTest extends TestCase
 
         $this->assertEmpty($enum->__toString());
         $this->assertNotEmpty($enum->listAllOptions());
+    }
+
+    public function testExceptionForNoDefinedDefaultValue(): void
+    {
+        $this->expectException(RuntimeException::class);
+        $this->expectExceptionCode(1578410537);
+
+        (new ExceptionEnumFixture())->__toString();
     }
 }
