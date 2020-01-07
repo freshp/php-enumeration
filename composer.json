@@ -10,11 +10,11 @@
         }
     },
     "require": {
-        "php": "^7.3"
+        "php": "^7.4"
     },
     "autoload-dev": {
         "psr-4": {
-            "FreshP\\PhpEnumeration\\Tests\\": "Tests/"
+            "FreshP\\PhpEnumeration\\Tests\\": "tests/"
         }
     },
     "require-dev": {
@@ -22,18 +22,23 @@
     },
     "scripts": {
         "post-install-cmd": "Tooly\\ScriptHandler::installPharTools",
-        "post-update-cmd": "Tooly\\ScriptHandler::installPharTools"
+        "post-update-cmd": "Tooly\\ScriptHandler::installPharTools",
+        "quickcheck": [
+            "./vendor/bin/phpunit.phar -c ./phpunit.xml --testdox",
+            "./vendor/bin/phpstan.phar analyse -l max ./src",
+            "./vendor/bin/phpcs.phar ./src --standard=PSR2"
+        ]
     },
     "extra": {
         "tools": {
             "phpunit": {
-                "url": "https://phar.phpunit.de/phpunit-8.4.3.phar",
-                "sign-url": "https://phar.phpunit.de/phpunit-8.4.3.phar.asc",
+                "url": "https://phar.phpunit.de/phpunit-8.5.1.phar",
+                "sign-url": "https://phar.phpunit.de/phpunit-8.5.1.phar.asc",
                 "force-replace": true
             },
             "phpcs": {
-                "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.2/phpcs.phar",
-                "sign-url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.2/phpcs.phar.asc",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.3/phpcs.phar",
+                "sign-url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.3/phpcs.phar.asc",
                 "force-replace": true
             },
             "phpcs-fixer": {

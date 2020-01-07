@@ -2,6 +2,7 @@ language: php
 
 php:
   - 7.3
+  - 7.4
 
 sudo: false
 
@@ -10,6 +11,4 @@ before_script:
   - composer install --prefer-source --no-interaction
 
 script:
-  - ./vendor/bin/phpunit.phar -c ./phpunit.xml --testdox
-  - ./vendor/bin/phpstan.phar analyse -l max ./src
-  - ./vendor/bin/phpcs.phar ./src --standard=PSR2
+  - composer quickcheck

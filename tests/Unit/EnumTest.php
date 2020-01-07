@@ -40,6 +40,20 @@ class EnumTest extends TestCase
         $this->assertEquals(EnumFixture::TEST_CONSTANT, $enum);
     }
 
+    public function testSuccessfulReturnValueForDefinedEnumWithStaticConstruct(): void
+    {
+        $enum = EnumFixture::TEST_CONSTANT();
+
+        $this->assertEquals(EnumFixture::TEST_CONSTANT, $enum);
+    }
+
+    public function testReturnValueForEnumWithStaticConstructThatDoesNotExist(): void
+    {
+        $enum = EnumFixture::BUBA_BALATSCHKI();
+
+        $this->assertEquals(EnumFixture::TEST_DEFAULT, $enum);
+    }
+
     public function testReflectionException(): void
     {
         $enum = new EmptyEnumFixture();

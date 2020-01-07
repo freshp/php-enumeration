@@ -6,6 +6,10 @@ namespace FreshP\PhpEnumeration\Tests\Fixtures;
 
 use FreshP\PhpEnumeration\Enum;
 
+/**
+ * @method static EmptyEnumFixture TEST_CONSTANT()
+ * @method static EmptyEnumFixture TEST_DEFAULT()
+ */
 class EnumFixture extends Enum
 {
     public const TEST_CONSTANT = 'constant';

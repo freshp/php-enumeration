@@ -8,19 +8,12 @@ use ReflectionClass;
 
 abstract class Enum
 {
-    protected $value;
+    protected string $value;
 
     public function __construct(string $value = '')
     {
         $this->setValue($value);
     }
-
-    public function __toString(): string
-    {
-        return $this->value;
-    }
-
-    abstract protected function getDefault(): string;
 
     protected function setValue(string $value): void
     {
@@ -35,6 +28,23 @@ abstract class Enum
 
     protected function toArray(): array
     {
+        return self::getAllConstants();
+    }
+
+    private static function getAllConstants(): array
+    {
         return (new ReflectionClass(static::class))->getConstants();
+    }
+
+    abstract protected function getDefault(): string;
+
+    final public static function __callStatic(string $name, array $arguments): self
+    {
+        return new static(self::getAllConstants()[$name] ?? '');
+    }
+
+    public function __toString(): string
+    {
+        return $this->value;
     }
 }
