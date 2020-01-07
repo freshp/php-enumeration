@@ -10,11 +10,10 @@ This small package can represent a enumeration field. For example in a database 
 ## Install and usage
 
 1. Basic install via composer
-
     ```
     "freshp/php-enumeration"": "1.0.0"
     ```
-2. take a look in the fixtures to see an example
+2. take a look in `tests/fixtures` to see an example
 
 ## Checks
 Run each command in the project root directory.
@@ -26,12 +25,12 @@ Run each command in the project root directory.
 
 ### Execute PHPCS-Fixer checks
 ```
-./vendor/bin/phpcs-fixer.phar fix ./src 
+./vendor/bin/phpcs-fixer.phar fix ./src -v --diff
 ```
 
 ### Execute PHPCS checks
 ```
-./vendor/bin/phpcs.phar ./src --standard=PSR2 
+./vendor/bin/phpcs.phar ./src --standard=PSR2
 ```
 
 ### Execute PHPSTAN checks
