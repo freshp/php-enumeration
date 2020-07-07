@@ -10,7 +10,7 @@ abstract class Enum
 {
     protected string $value;
 
-    public function __construct(string $value = '')
+    final public function __construct(string $value = '')
     {
         $this->setValue($value);
     }

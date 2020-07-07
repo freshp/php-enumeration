@@ -20,17 +20,17 @@ Run each command in the project root directory.
 
 ### Execute PHPUnit tests
 ```
-./vendor/bin/phpunit.phar -c ./phpunit.xml --testdox
+./vendor/bin/phpunit.phar --testdox
 ```
 
-### Execute PHPCS-Fixer checks
+### Execute fix PHPCS problems
 ```
-./vendor/bin/phpcs-fixer.phar fix ./src -v --diff
+./vendor/bin/phpcbf.phar
 ```
 
 ### Execute PHPCS checks
 ```
-./vendor/bin/phpcs.phar ./src --standard=PSR2
+./vendor/bin/phpcs.phar
 ```
 
 ### Execute PHPSTAN checks

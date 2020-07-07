@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<ruleset
+        name="PHP Coding Standards"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
+
+    <!-- set config paths to check-packages -->
+    <config name="ignore_warnings_on_exit" value="true"/>
+    <config name="ignore_errors_on_exit" value="true"/>
+
+    <!-- set basic phpcs config -->
+    <arg name="extensions" value="php"/>
+    <arg name="colors"/>
+
+    <!-- Show progress of the run -->
+    <arg value="p"/>
+
+    <!-- set ruleset to use -->
+    <rule ref="PSR12"/>
+
+    <!-- set paths to check -->
+    <file>src</file>
+    <file>tests</file>
+</ruleset>

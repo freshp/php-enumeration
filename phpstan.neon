@@ -1,0 +1,11 @@
+parameters:
+    level: max
+
+    inferPrivatePropertyTypeFromConstructor: true
+    checkMissingIterableValueType: false
+
+    fileExtensions:
+        - php
+
+    paths:
+        - %currentWorkingDirectory%/src
