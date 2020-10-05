@@ -7,8 +7,8 @@ namespace FreshP\PhpEnumeration\Tests\Fixtures;
 use FreshP\PhpEnumeration\Enum;
 
 /**
- * @method static TEST_CONSTANT()
- * @method static TEST_DEFAULT()
+ * @method static self TEST_CONSTANT()
+ * @method static self TEST_DEFAULT()
  */
 class EnumFixture extends Enum
 {
