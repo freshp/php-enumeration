@@ -8,7 +8,7 @@ use FreshP\PhpEnumeration\Enum;
 use RuntimeException;
 
 /**
- * @method static ENUM_OPTION()
+ * @method static self ENUM_OPTION()
  */
 class ExceptionEnumFixture extends Enum
 {
