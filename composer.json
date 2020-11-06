@@ -32,23 +32,23 @@
     "extra": {
         "tools": {
             "phpunit": {
-                "url": "https://phar.phpunit.de/phpunit-9.2.3.phar",
-                "sign-url": "https://phar.phpunit.de/phpunit-9.2.3.phar.asc",
+                "url": "https://phar.phpunit.de/phpunit-9.4.2.phar",
+                "sign-url": "https://phar.phpunit.de/phpunit-9.4.2.phar.asc",
                 "force-replace": true
             },
             "phpcs": {
-                "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.5/phpcs.phar",
-                "sign-url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.5/phpcs.phar.asc",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.8/phpcs.phar",
+                "sign-url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.8/phpcs.phar.asc",
                 "force-replace": true
             },
             "phpcbf": {
-                "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.5/phpcbf.phar",
-                "sign-url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.5/phpcbf.phar.asc",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.8/phpcbf.phar",
+                "sign-url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.8/phpcbf.phar.asc",
                 "force-replace": true
             },
             "phpstan": {
-                "url": "https://github.com/phpstan/phpstan/releases/download/0.12.29/phpstan.phar",
-                "sign-url": "https://github.com/phpstan/phpstan/releases/download/0.12.29/phpstan.phar.asc",
+                "url": "https://github.com/phpstan/phpstan/releases/download/0.12.54/phpstan.phar",
+                "sign-url": "https://github.com/phpstan/phpstan/releases/download/0.12.54/phpstan.phar.asc",
                 "force-replace": true
             }
         }
