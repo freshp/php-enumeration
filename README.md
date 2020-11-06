@@ -7,7 +7,7 @@
 
 This small package can represent a enumeration field. For example in a database or an api.
 
-Featureslist: 
+**Featureslist:** 
 * inspired and mostly used for MySQL enum-fields or API enum-fields
 * it is a simple string representation
 * no other values are allow besides the defined in the class
@@ -19,9 +19,9 @@ Featureslist:
 ## Install
 
 Basic install via composer
-    ```
-    "freshp/php-enumeration"": "3.1.0"
-    ```
+```
+composer require freshp/php-enumeration
+```
 
 ##  Usage
 
@@ -96,6 +96,11 @@ class EnumExample extends Enum
 
 ## Checks
 Run each command in the project root directory.
+
+run all check with composer script
+```
+composer quickcheck
+```
 
 ### Execute PHPUnit tests
 ```
