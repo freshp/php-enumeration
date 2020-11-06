@@ -7,13 +7,92 @@
 
 This small package can represent a enumeration field. For example in a database or an api.
 
-## Install and usage
+Featureslist: 
+* inspired and mostly used for MySQL enum-fields or API enum-fields
+* it is a simple string representation
+* no other values are allow besides the defined in the class
+* simple usage and easy to read
+* no features a enum do not have to deal with
+* with a default fallback value which will be used if no matching value exists in const´s
+   * you can harden this object by throwing an exception in the `getDefault`-method 
 
-1. Basic install via composer
+## Install
+
+Basic install via composer
     ```
-    "freshp/php-enumeration"": "1.0.0"
+    "freshp/php-enumeration"": "3.1.0"
     ```
-2. take a look in `tests/fixtures` to see an example
+
+##  Usage
+
+Take a look in `tests/fixtures` to see a executable example.
+
+Create a new object with:
+1. public const´s which represent strings
+2. implement the `getDefault`-method
+ 
+### Create an enumeration object
+```php
+use FreshP\PhpEnumeration\Enum;
+
+class EnumExample extends Enum
+{
+    public const TEST_CONSTANT = 'constant';
+    public const TEST_DEFAULT = 'default';
+    
+    protected function getDefault(): string
+    {
+        return self::TEST_DEFAULT;
+    }
+}
+```
+
+use annotations for better ide support
+
+```php
+use FreshP\PhpEnumeration\Enum;
+
+/**
+ * @method static self TEST_CONSTANT()
+ * @method static self TEST_DEFAULT()
+ */
+class EnumExample extends Enum
+...
+```
+
+make the data of the parent `toArray`-method public if you need to iterate over all options
+
+```php
+class EnumExample extends Enum
+{
+...
+    public function listAllOptions(): array
+    {
+        return $this->toArray();
+    }
+...
+```
+
+### Use the enumeration object
+1. create the object by static call
+    ```php
+    $enum = EnumExample::TEST_CONSTANT();
+    ```
+
+1. create the object by normal initialization
+    ```php
+    $enum = new EnumExample(EnumExample::TEST_CONSTANT);
+    ```
+   
+1. create a default object (the value from the `getDefault`-method will be called)
+    ```php
+    $enum = new EnumExample();
+    ```
+   
+1. compare the object by using the `__toString`-method
+    ```php
+   $enum === EnumExample::TEST_CONSTANT
+    ```
 
 ## Checks
 Run each command in the project root directory.
