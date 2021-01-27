@@ -10,7 +10,7 @@
         }
     },
     "require": {
-        "php": "^7.4"
+        "php": "^7.4|^8.0"
     },
     "autoload-dev": {
         "psr-4": {
@@ -32,8 +32,8 @@
     "extra": {
         "tools": {
             "phpunit": {
-                "url": "https://phar.phpunit.de/phpunit-9.4.2.phar",
-                "sign-url": "https://phar.phpunit.de/phpunit-9.4.2.phar.asc",
+                "url": "https://phar.phpunit.de/phpunit-9.5.1.phar",
+                "sign-url": "https://phar.phpunit.de/phpunit-9.5.1.phar.asc",
                 "force-replace": true
             },
             "phpcs": {
@@ -47,8 +47,8 @@
                 "force-replace": true
             },
             "phpstan": {
-                "url": "https://github.com/phpstan/phpstan/releases/download/0.12.54/phpstan.phar",
-                "sign-url": "https://github.com/phpstan/phpstan/releases/download/0.12.54/phpstan.phar.asc",
+                "url": "https://github.com/phpstan/phpstan/releases/download/0.12.69/phpstan.phar",
+                "sign-url": "https://github.com/phpstan/phpstan/releases/download/0.12.69/phpstan.phar.asc",
                 "force-replace": true
             }
         }
