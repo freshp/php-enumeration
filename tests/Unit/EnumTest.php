@@ -18,14 +18,16 @@ class EnumTest extends TestCase
     {
         $enum = new EnumFixture();
 
-        $this->assertEquals(EnumFixture::TEST_DEFAULT, $enum);
+        self::assertSame(EnumFixture::TEST_DEFAULT, $enum->__toString());
+        self::assertTrue($enum->isEqual(EnumFixture::TEST_DEFAULT()));
     }
 
     public function testDefaultEnumHandlingWithConstructorValue(): void
     {
         $enum = new EnumFixture('definitely not set value');
 
-        $this->assertEquals(EnumFixture::TEST_DEFAULT, $enum);
+        self::assertSame(EnumFixture::TEST_DEFAULT, (string)$enum);
+        self::assertTrue($enum->isEqual(EnumFixture::TEST_DEFAULT()));
     }
 
     public function testTypeErrorForUsingWrongDataType(): void
@@ -39,29 +41,32 @@ class EnumTest extends TestCase
     {
         $enum = new EnumFixture(EnumFixture::TEST_CONSTANT);
 
-        $this->assertEquals(EnumFixture::TEST_CONSTANT, $enum);
+        self::assertSame(EnumFixture::TEST_CONSTANT, (string)$enum);
+        self::assertTrue($enum->isEqual(EnumFixture::TEST_CONSTANT()));
     }
 
     public function testSuccessfulReturnValueForDefinedEnumWithStaticConstruct(): void
     {
         $enum = EnumFixture::TEST_CONSTANT();
 
-        $this->assertEquals(EnumFixture::TEST_CONSTANT, $enum);
+        self::assertSame(EnumFixture::TEST_CONSTANT, (string)$enum);
+        self::assertTrue($enum->isEqual(EnumFixture::TEST_CONSTANT()));
     }
 
     public function testReturnValueForEnumWithStaticConstructThatDoesNotExist(): void
     {
         $enum = EnumFixture::BUBA_BALATSCHKI();
 
-        $this->assertEquals(EnumFixture::TEST_DEFAULT, $enum);
+        self::assertSame(EnumFixture::TEST_DEFAULT, (string)$enum);
+        self::assertTrue($enum->isEqual(EnumFixture::TEST_DEFAULT()));
     }
 
     public function testReflectionException(): void
     {
         $enum = new EmptyEnumFixture();
 
-        $this->assertEmpty($enum->__toString());
-        $this->assertNotEmpty($enum->listAllOptions());
+        self::assertEmpty($enum->__toString());
+        self::assertNotEmpty(EmptyEnumFixture::listAllOptions());
     }
 
     public function testExceptionForNoDefinedDefaultValue(): void
