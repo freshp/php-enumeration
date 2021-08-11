@@ -43,6 +43,11 @@ abstract class Enum
         return new static(self::getAllConstants()[$name] ?? '');
     }
 
+    public function isEqual(self $compareTo): bool
+    {
+        return $this->__toString() === $compareTo->__toString();
+    }
+
     public function __toString(): string
     {
         return $this->value;
