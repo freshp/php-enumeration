@@ -66,9 +66,9 @@ make the data of the parent `toArray`-method public if you need to iterate over 
 class EnumExample extends Enum
 {
 ...
-    public function listAllOptions(): array
+    public static function listAllOptions(): array
     {
-        return $this->toArray();
+        return self::toArray();
     }
 ...
 ```
@@ -79,19 +79,23 @@ class EnumExample extends Enum
     $enum = EnumExample::TEST_CONSTANT();
     ```
 
-1. create the object by normal initialization
+2. create the object by normal initialization
     ```php
     $enum = new EnumExample(EnumExample::TEST_CONSTANT);
     ```
    
-1. create a default object (the value from the `getDefault`-method will be called)
+3. create a default object (the value from the `getDefault`-method will be called)
     ```php
     $enum = new EnumExample();
     ```
    
-1. compare the object by using the `__toString`-method
+4. compare the object by using the `__toString`-method
     ```php
-   $enum === EnumExample::TEST_CONSTANT
+   $enum->__toString() === EnumExample::TEST_CONSTANT
+    ```
+   or 
+    ```php
+   $enum->isEqual(EnumExample::TEST_CONSTANT())
     ```
 
 ## Checks

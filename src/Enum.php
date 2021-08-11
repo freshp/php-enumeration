@@ -17,7 +17,7 @@ abstract class Enum
 
     protected function setValue(string $value): void
     {
-        if (true === in_array($value, $this->toArray(), true)) {
+        if (true === in_array($value, self::toArray(), true)) {
             $this->value = $value;
 
             return;
@@ -26,7 +26,7 @@ abstract class Enum
         $this->value = $this->getDefault();
     }
 
-    protected function toArray(): array
+    protected static function toArray(): array
     {
         return self::getAllConstants();
     }
@@ -41,6 +41,11 @@ abstract class Enum
     final public static function __callStatic(string $name, array $arguments): self
     {
         return new static(self::getAllConstants()[$name] ?? '');
+    }
+
+    public function isEqual(self $compareTo): bool
+    {
+        return $this->__toString() === $compareTo->__toString();
     }
 
     public function __toString(): string

@@ -10,9 +10,9 @@ class EmptyEnumFixture extends Enum
 {
     private const ENUM_OPTION = 'secure';
 
-    public function listAllOptions(): array
+    public static function listAllOptions(): array
     {
-        return $this->toArray();
+        return self::toArray();
     }
 
     protected function getDefault(): string
