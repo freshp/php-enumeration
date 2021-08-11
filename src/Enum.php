@@ -17,7 +17,7 @@ abstract class Enum
 
     protected function setValue(string $value): void
     {
-        if (true === in_array($value, $this->toArray(), true)) {
+        if (true === in_array($value, self::toArray(), true)) {
             $this->value = $value;
 
             return;
@@ -26,7 +26,7 @@ abstract class Enum
         $this->value = $this->getDefault();
     }
 
-    protected function toArray(): array
+    protected static function toArray(): array
     {
         return self::getAllConstants();
     }

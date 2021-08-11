@@ -66,9 +66,9 @@ make the data of the parent `toArray`-method public if you need to iterate over 
 class EnumExample extends Enum
 {
 ...
-    public function listAllOptions(): array
+    public static function listAllOptions(): array
     {
-        return $this->toArray();
+        return self::toArray();
     }
 ...
 ```
